@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Orçamento</title>
+  <style>
+    body {
+      font-family: Segoe UI, Tahoma, Arial, sans-serif;
+      font-size: 12px;
+      margin: 8px;
+      background: ButtonFace;
+    }
+    .box {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    function OnLoad() {
+      window.external.Application.InitializeVBA();
+    }
+
+    function AtualizarSelecao() {
+      window.external.Application.GMSManager.RunMacro(
+        "MeuOrcamento",
+        "MeuOrcamentoLauncher.AtualizarSelecao"
+      );
+    }
+  </script>
+</head>
+
+<body onload="OnLoad()">
+  <div class="box">
+    <h3>Meu Orçamento</h3>
+    <p>Painel carregado com sucesso.</p>
+    <button onclick="AtualizarSelecao()">Atualizar seleção</button>
+  </div>
+</body>
+</html>
